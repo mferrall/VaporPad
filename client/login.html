@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/js/jquery.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="login-form">
+    <div id="registerblk" class="alert " role="alert" style="display:none;">
+  Registered Successfully !!! Please Login
+    </div>
+    <h1>Login Form</h1>
+    <form action="auth" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+    <br/><br/>
+    <div class="register">If not registered you can register <a href="/register">here</a></div>
+</div>
+<script type="text/javascript">
+        var queryString = location.search; 
+        if(queryString.includes("registered")){
+            $('#registerblk').css("display", "block");
+            $('#registerblk').fadeOut(3000);
+            
+        }
+</script>
+</body>
+</html>

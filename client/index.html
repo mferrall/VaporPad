@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <title>Collaborate Notebook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <style>
+      body {
+        padding: 60px;
+      }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/viewnotes.js"></script>
+      <script>
+      //function CollaborativeEditor($scope) {
+        //setInterval(sendText, 1000);
+        
+        /*var socket = io.connect();*/
+
+        /*$scope.messages = [];
+        $scope.roster = [];
+        $scope.name = '';
+        $scope.text = '';
+
+        socket.on('connect', function () {
+          $scope.setName();
+        });
+
+        socket.on('message', function (msg) {
+          $scope.messages.push(msg);
+          $scope.$apply();
+        });
+
+        socket.on('roster', function (names) {
+          $scope.roster = names;
+          $scope.$apply();
+        });
+
+        $scope.send = function send() {
+          console.log('Sending message:', $scope.text);
+          socket.emit('message', $scope.text);
+          $scope.text = '';
+        //};
+
+        $scope.setName = function setName() {
+          socket.emit('identify', $scope.name);
+        };
+      };
+      function sendText() {
+        console.log($("#notepad").val());
+        socket.emit('message', $("#notepad").val());
+      }*/
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+
+          <li class="active"><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <h1>Collaborative Notebook</h1>
+      <form method="POST" name="createpadForm" id="createpadForm">
+      <input type="submit" value="Create Notepad" id="create_pad" >
+      <input type="text" placeholder="Enter Notepad Name" name="pad_title"/>
+    </form>
+
+    <div id="viewnotes"></div>
+  </body>
+ 
+</html>
